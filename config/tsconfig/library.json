@@ -1,0 +1,13 @@
+{
+  "extends": "./base.json",
+  "compilerOptions": {
+    "lib": [
+      "ES2018"
+    ],
+    "target": "ES2018",
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "allowJs": false
+  }
+}

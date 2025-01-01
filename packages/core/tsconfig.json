@@ -1,0 +1,6 @@
+{
+  "extends": "@infra/tsconfig/library",
+  "include": [
+    "src"
+  ]
+}
