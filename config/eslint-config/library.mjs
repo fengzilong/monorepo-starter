@@ -38,7 +38,6 @@ export default tseslint.config(
     },
     rules: {
       'no-magic-numbers': 'off',
-      // https://github.com/typescript-eslint/typescript-eslint/pull/2609
       'no-duplicate-imports': 'off',
       'import-x/no-duplicates': 'error',
       'simple-import-sort/imports': 'error',
