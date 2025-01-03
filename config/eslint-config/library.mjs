@@ -1,13 +1,11 @@
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { resolve } from 'node:path';
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginImportX from 'eslint-plugin-import-x'
 import globals from 'globals'
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const project = resolve(process.cwd(), 'tsconfig.json');
 
 export default tseslint.config(
   {
@@ -21,11 +19,7 @@ export default tseslint.config(
   {
     languageOptions: {
       parserOptions: {
-        ecmaVersion: 2022,
-        sourceType: 'module',
-        project: ['./tsconfig.json'],
-        projectService: true,
-        tsconfigRootDir: __dirname,
+        project,
       },
       globals: {
         ...globals.browser,
