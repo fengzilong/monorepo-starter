@@ -36,5 +36,5 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
-
+      - run: turbo build
       - run: pnpx pkg-pr-new publish './packages/*' --packageManager=pnpm --no-template
