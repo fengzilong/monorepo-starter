@@ -63,12 +63,4 @@ export default tseslint.config(
       // '@stylistic/js/template-curly-spacing': ['error', 'always'],
     },
   },
-  {
-    plugins: {
-      
-    },
-    rules: {
-      
-    },
-  },
 )
