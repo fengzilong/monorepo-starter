@@ -4,6 +4,7 @@ import tseslint from 'typescript-eslint';
 import pluginImportX from 'eslint-plugin-import-x'
 import globals from 'globals'
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import stylisticJs from '@stylistic/eslint-plugin-js'
 
 const project = resolve(process.cwd(), 'tsconfig.json');
 
@@ -16,6 +17,32 @@ export default tseslint.config(
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
+  {
+    plugins: {
+      '@stylistic/js': stylisticJs
+    },
+    rules: {
+      '@stylistic/js/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+      '@stylistic/js/jsx-quotes': ['error', 'prefer-double'],
+      '@stylistic/js/array-bracket-newline': ['error', 'consistent'],
+      '@stylistic/js/array-bracket-spacing': ['error', 'always'],
+      '@stylistic/js/arrow-parens': ['error', 'as-needed'],
+      '@stylistic/js/arrow-spacing': 'error',
+      '@stylistic/js/block-spacing': 'error',
+      '@stylistic/js/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/js/comma-spacing': ['error', { 'before': false, 'after': true }],
+      '@stylistic/js/computed-property-spacing': ['error', 'always'],
+      '@stylistic/js/dot-location': ['error', 'property'],
+      '@stylistic/js/eol-last': ['error', 'always'],
+      '@stylistic/js/generator-star-spacing': ['error', {'before': true, 'after': false}],
+      '@stylistic/js/indent': ['error', 2, { 'SwitchCase': 1 }],
+      '@stylistic/js/key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }],
+      '@stylistic/js/keyword-spacing': ['error', { 'before': true, after: true }],
+      '@stylistic/js/max-len': ['warn', { 'code': 80 }],
+      '@stylistic/js/semi': ['error', 'never', { 'beforeStatementContinuationChars': 'always'}],
+      '@stylistic/js/template-curly-spacing': ['error', 'always'],
+    },
+  },
   {
     languageOptions: {
       parserOptions: {
@@ -31,11 +58,7 @@ export default tseslint.config(
       'simple-import-sort': simpleImportSort,
     },
     rules: {
-      'quotes': [
-        'error',
-        'single',
-        { allowTemplateLiterals: true }
-      ],
+      
       'no-magic-numbers': 'off',
       'no-duplicate-imports': 'off',
       'import-x/no-duplicates': 'error',
