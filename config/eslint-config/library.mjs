@@ -31,6 +31,11 @@ export default tseslint.config(
       'simple-import-sort': simpleImportSort,
     },
     rules: {
+      'quotes': [
+        'error',
+        'single',
+        { allowTemplateLiterals: true }
+      ],
       'no-magic-numbers': 'off',
       'no-duplicate-imports': 'off',
       'import-x/no-duplicates': 'error',
