@@ -1,5 +1,5 @@
-import config from '@infra/eslint-config/library.mjs'
+import createConfig, { Target } from '@infra/eslint-config/library.mjs'
 
 export default [
-  ...config,
+  ...createConfig(Target.Browser),
 ]
