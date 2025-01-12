@@ -62,7 +62,20 @@ importers:
 
   config/tsconfig: {}
 
-  packages/core:
+  packages/bar:
+    dependencies:
+      foo:
+        specifier: workspace:*
+        version: link:../foo
+    devDependencies:
+      '@infra/eslint-config':
+        specifier: workspace:*
+        version: link:../../config/eslint-config
+      '@infra/tsconfig':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
+
+  packages/foo:
     devDependencies:
       '@infra/eslint-config':
         specifier: workspace:*

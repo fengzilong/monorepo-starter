@@ -1,0 +1,38 @@
+{
+  "name": "bar",
+  "version": "0.1.0",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "build-fast": "tsup",
+    "build": "tsup --dts-resolve",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "lint": "tsc --noEmit && eslint src -f mo",
+    "prepublishOnly": "pnpm lint && pnpm test && pnpm build"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "foo": "workspace:*"
+  },
+  "devDependencies": {
+    "@infra/tsconfig": "workspace:*",
+    "@infra/eslint-config": "workspace:*"
+  }
+}

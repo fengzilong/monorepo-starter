@@ -1,7 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "composite": false,
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
@@ -18,10 +17,11 @@
     "moduleResolution": "Bundler",
     "noImplicitAny": true,
     "allowJs": true,
-    "noEmit": true,
-    "outDir": "dist",
     "resolveJsonModule": true,
-    "types": []
+    "types": [],
+    "composite": true,
+    "baseUrl": "${configDir}",
+    "rootDir": "${configDir}/src"
   },
   "exclude": [
     "node_modules",
