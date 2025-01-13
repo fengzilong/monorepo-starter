@@ -2,15 +2,13 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./base.json",
   "compilerOptions": {
+    "noEmit": false,
     "lib": [
       "ES2018",
       "DOM",
       "DOM.Iterable"
     ],
     "target": "ES2018",
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "outDir": "dist",
-    "allowJs": false
+    "outDir": "dist"
   }
 }
