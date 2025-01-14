@@ -8,11 +8,11 @@
     "test": "turbo test",
     "coverage": "turbo coverage",
     "prepare": "simple-git-hooks",
-    "publish-packages": "turbo run build lint test && changeset version && changeset publish",
-    "ci:publish-packages": "turbo run build lint test && changeset publish"
+    "publish-packages": "turbo build lint test && changeset version && changeset publish",
+    "ci:publish-packages": "turbo build lint test && changeset publish"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm run lint && pnpm test"
+    "pre-commit": "pnpm lint && pnpm test"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.11",
