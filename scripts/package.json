@@ -1,0 +1,13 @@
+{
+  "name": "scripts",
+  "private": true,
+  "scripts": {
+    "lint": "node ./publint.mjs"
+  },
+  "dependencies": {
+    "publint": "^0.3.2",
+    "fs-extra": "^11.2.0",
+    "tinyglobby": "^0.2.10",
+    "picocolors": "^1.1.1"
+  }
+}

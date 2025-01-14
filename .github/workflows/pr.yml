@@ -37,4 +37,5 @@ jobs:
       - run: pnpm i
         env:
           COREPACK_ENABLE_DOWNLOAD_PROMPT: 0
+      - run: pnpm lint
       - run: pnpm test
