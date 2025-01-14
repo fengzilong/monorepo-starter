@@ -2,7 +2,7 @@
   "name": "scripts",
   "private": true,
   "scripts": {
-    "lint": "node ./publint.mjs"
+    "lint-packages": "node ./publint.mjs"
   },
   "dependencies": {
     "publint": "^0.3.2",

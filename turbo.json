@@ -26,6 +26,11 @@
     "lint": {
       "dependsOn": [
         "^lint"
+      ]
+    },
+    "lint-packages": {
+      "dependsOn": [
+        "^lint-packages"
       ],
       "cache": false
     }
