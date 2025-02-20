@@ -18,6 +18,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+
+      # https://pnpm.io/next/continuous-integration#github-actions
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.1
+
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
@@ -34,10 +41,9 @@ jobs:
             ${{ runner.os }}-${{ matrix.node-version }}-test-
             ${{ runner.os }}-
 
-      - run: corepack enable
-      - run: pnpm i
-        env:
-          COREPACK_ENABLE_DOWNLOAD_PROMPT: 0
+      - name: Install dependencies
+        run: pnpm install
+
       - run: pnpm lint
       - run: pnpm test
 
@@ -53,9 +59,17 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
+
+      # https://pnpm.io/next/continuous-integration#github-actions
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.1
+
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Cache ~/.pnpm-store
         uses: actions/cache@v4
         env:
@@ -67,10 +81,9 @@ jobs:
             ${{ runner.os }}-${{ matrix.node-version }}-release-${{ env.cache-name }}-
             ${{ runner.os }}-${{ matrix.node-version }}-release-
             ${{ runner.os }}-
-      - run: corepack enable
-      - run: pnpm i
-        env:
-          COREPACK_ENABLE_DOWNLOAD_PROMPT: 0
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets

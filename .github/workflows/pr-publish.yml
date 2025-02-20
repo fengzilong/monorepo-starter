@@ -28,7 +28,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - run: corepack enable
+      # https://pnpm.io/next/continuous-integration#github-actions
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.1
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -36,5 +41,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
       - run: turbo build
       - run: pnpx pkg-pr-new publish './packages/*' --packageManager=pnpm --no-template
