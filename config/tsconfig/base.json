@@ -1,7 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "noEmit": true,
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
@@ -25,8 +24,13 @@
     "types": [],
     "composite": true,
     "baseUrl": "${configDir}",
-    "rootDir": "${configDir}/src"
+    "rootDir": "${configDir}/src",
+    "outDir": "${configDir}/dist"
   },
+  "include": [
+    "${configDir}/src",
+    "${configDir}/src/**/*.json"
+  ],
   "exclude": [
     "node_modules",
     "dist"

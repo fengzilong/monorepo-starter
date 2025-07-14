@@ -1,11 +1,5 @@
 {
   "extends": "@infra/tsconfig/browser",
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": [
-    "src"
-  ],
   "references": [
     {
       "path": "../foo"

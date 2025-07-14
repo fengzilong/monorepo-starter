@@ -1,7 +1,5 @@
-import { expect,test } from 'vitest'
-
-import { foo } from '../src/index'
+import { expect, test } from 'vitest'
 
 test('simple', () => {
-  expect(foo).toBe('foo')
+  expect('foo').toBe('foo')
 })

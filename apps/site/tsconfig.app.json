@@ -29,7 +29,8 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "composite": true
   },
   "include": [
     "src"

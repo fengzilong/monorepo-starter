@@ -1,9 +1,3 @@
 {
-  "extends": "@infra/tsconfig/browser",
-  "compilerOptions": {
-    "outDir": "dist"
-  },
-  "include": [
-    "src"
-  ]
+  "extends": "@infra/tsconfig/browser"
 }
