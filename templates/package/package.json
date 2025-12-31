@@ -1,0 +1,32 @@
+{
+  "name": "{{name}}",
+  "version": "0.1.0",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build-fast": "tsup",
+    "build": "tsup && tsc --emitDeclarationOnly",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "lint": "tsc --noEmit && eslint src -f mo",
+    "prepublishOnly": "pnpm lint && pnpm test && pnpm build"
+  },
+  "license": "{{license}}",
+  "devDependencies": {
+    "@infra/tsconfig": "workspace:*",
+    "@infra/eslint-config": "workspace:*"
+  }
+}

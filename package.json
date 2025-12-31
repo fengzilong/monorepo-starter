@@ -9,7 +9,8 @@
     "coverage": "turbo coverage",
     "prepare": "simple-git-hooks",
     "publish-packages": "turbo build && turbo lint lint-packages test && changeset version && changeset publish",
-    "ci:publish-packages": "turbo build && turbo lint lint-packages test && changeset publish"
+    "ci:publish-packages": "turbo build && turbo lint lint-packages test && changeset publish",
+    "plop": "plop --plopfile plopfile.mts"
   },
   "simple-git-hooks": {
     "pre-commit": "turbo build && turbo lint lint-packages test"
@@ -19,7 +20,7 @@
     "@types/node": "^22",
     "@vitest/coverage-v8": "^2.1.8",
     "eslint": "^9.9.0",
-    "eslint-formatter-mo": "^1.2.1",
+    "eslint-formatter-mo": "^2.4.1",
     "simple-git-hooks": "^2",
     "tsup": "^8",
     "turbo": "^2.3.3",
