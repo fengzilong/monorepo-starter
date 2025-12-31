@@ -1,11 +1,21 @@
-import { type ActionType, type NodePlopAPI } from 'plop';
+import type { ActionConfig, ActionType, NodePlopAPI } from 'plop';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execSync } from 'node:child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default function (plop: NodePlopAPI) {
+  plop.setActionType('runCommand', async (_answers, config) => {
+    if (config.command) {
+      execSync(config.command, { stdio: 'inherit' });
+      return '';
+    }
+
+    return '';
+  });
+
   plop.setGenerator('package', {
     description: 'Create a new package',
     prompts: [
@@ -55,6 +65,12 @@ export default function (plop: NodePlopAPI) {
           abortOnFail: true,
         })
       }
+
+      actions.push({
+        type: 'runCommand',
+        command: 'pnpm i',
+        abortOnFail: true,
+      } as ActionConfig)
 
       return actions;
     },

@@ -148,6 +148,15 @@ importers:
         specifier: workspace:*
         version: link:../../config/tsconfig
 
+  packages/demo:
+    devDependencies:
+      '@infra/eslint-config':
+        specifier: workspace:*
+        version: link:../../config/eslint-config
+      '@infra/tsconfig':
+        specifier: workspace:*
+        version: link:../../config/tsconfig
+
   packages/foo:
     devDependencies:
       '@infra/eslint-config':
