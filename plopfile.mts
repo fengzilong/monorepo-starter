@@ -6,6 +6,8 @@ import { execSync } from 'node:child_process';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const TEMPLATE_FOLDER = 'plop-templates'
+
 export default function (plop: NodePlopAPI) {
   plop.setActionType('runCommand', async (_answers, config) => {
     if (config.command) {
@@ -44,15 +46,15 @@ export default function (plop: NodePlopAPI) {
       actions.push(
         {
           type: 'addMany',
-          base: path.join(__dirname, 'templates/package'),
-          templateFiles: path.join(__dirname, 'templates/package/**/*'),
+          base: path.join(__dirname, `${TEMPLATE_FOLDER}/package`),
+          templateFiles: path.join(__dirname, `${TEMPLATE_FOLDER}/package/**/*`),
           destination: 'packages/{{name}}',
           abortOnFail: true,
         },
         {
           type: 'add',
           path: 'packages/{{name}}/LICENSE',
-          templateFile: path.join(__dirname, 'templates/licenses/{{license}}'),
+          templateFile: path.join(__dirname, `${TEMPLATE_FOLDER}/licenses/{{license}}`),
           abortOnFail: true,
         }
       )
@@ -61,7 +63,7 @@ export default function (plop: NodePlopAPI) {
         actions.push({
           type: 'add',
           path: 'packages/{{name}}/NOTICE',
-          templateFile: path.join(__dirname, 'templates/licenses/Apache-2.0-NOTICE'),
+          templateFile: path.join(__dirname, `${TEMPLATE_FOLDER}/licenses/Apache-2.0-NOTICE`),
           abortOnFail: true,
         })
       }
