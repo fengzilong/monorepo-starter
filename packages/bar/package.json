@@ -24,12 +24,12 @@
     "lint": "tsc --noEmit && eslint src -f mo",
     "prepublishOnly": "pnpm lint && pnpm test && pnpm build"
   },
-  "license": "MIT",
   "dependencies": {
     "foo": "workspace:*"
   },
   "devDependencies": {
     "@infra/tsconfig": "workspace:*",
     "@infra/eslint-config": "workspace:*"
-  }
+  },
+  "license": "MIT"
 }
