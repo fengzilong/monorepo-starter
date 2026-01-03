@@ -1,17 +1,21 @@
 import eslint from '@eslint/js';
+import { defineConfig } from 'eslint/config'
 import tseslint from 'typescript-eslint';
 import pluginImportX from 'eslint-plugin-import-x'
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import stylisticTs from '@stylistic/eslint-plugin-ts'
 // import stylisticJs from '@stylistic/eslint-plugin-js'
 
-export default tseslint.config(
+export default defineConfig([
   {
     ignores: [
       '*.config.*',
       '**/dist/**',
     ],
   },
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
+  tseslint.configs.recommendedTypeChecked,
   {
     languageOptions: {
       parserOptions: {
@@ -19,11 +23,6 @@ export default tseslint.config(
         tsconfigRootDir: process.cwd(),
       },
     },
-    extends: [
-      eslint.configs.recommended,
-      tseslint.configs.recommended,
-      tseslint.configs.recommendedTypeChecked,
-    ],
   },
   {
     plugins: {
@@ -67,8 +66,8 @@ export default tseslint.config(
       '@stylistic/ts/key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }],
       '@stylistic/ts/keyword-spacing': ['error', { 'before': true, after: true }],
       // '@stylistic/js/max-len': ['warn', { 'code': 80 }],
-      '@stylistic/ts/semi': ['error', 'never', { 'beforeStatementContinuationChars': 'always'}],
+      '@stylistic/ts/semi': ['error', 'never', { 'beforeStatementContinuationChars': 'always' }],
       // '@stylistic/js/template-curly-spacing': ['error', 'always'],
     },
   },
-)
+])
