@@ -138,6 +138,9 @@ importers:
 
   config/tsconfig:
     dependencies:
+      '@tsconfig/bun':
+        specifier: ^1.0.10
+        version: 1.0.10
       '@types/node':
         specifier: ^24
         version: 24.10.4
@@ -1177,6 +1180,9 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.40.0'
+
+  '@tsconfig/bun@1.0.10':
+    resolution: {integrity: sha512-5AV5YknQjNyoYzZ/8NG0dawqew/wH+x7ANiCfCIn29qo0cdbd1EryvFD1k5NSZWLBMOI/fGqMIaxi58GPIP9Cg==}
 
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
@@ -4167,6 +4173,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
+
+  '@tsconfig/bun@1.0.10': {}
 
   '@tybys/wasm-util@0.10.1':
     dependencies:

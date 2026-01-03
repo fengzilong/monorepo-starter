@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@types/node": "^24"
+    "@types/node": "^24",
+    "@tsconfig/bun": "^1.0.10"
   }
 }
