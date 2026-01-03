@@ -6,6 +6,10 @@
   },
   "eslint.validate": [
     "javascript",
-    "typescript"
-  ]
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.codeActionsOnSave.mode": "problems",
+  "typescript.preferences.quoteStyle": "single"
 }
