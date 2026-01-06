@@ -29,7 +29,13 @@
   },
   "devDependencies": {
     "@infra/tsconfig": "workspace:*",
-    "@infra/eslint-config": "workspace:*"
+    "@infra/eslint-config": "workspace:*",
+    "@vitest/coverage-v8": "catalog:",
+    "eslint": "catalog:",
+    "eslint-formatter-mo": "catalog:",
+    "vitest": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:"
   },
   "license": "MIT"
 }
