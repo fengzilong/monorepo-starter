@@ -16,3 +16,4 @@ catalog:
   'vitest': ^4.0.16
   'tsup': ^8
   'typescript': ^5
+  '@typescript/native-preview': ^7.0.0-dev.20260106.1

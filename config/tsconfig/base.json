@@ -23,7 +23,6 @@
     "resolveJsonModule": true,
     "types": [],
     "composite": true,
-    "baseUrl": "${configDir}",
     "rootDir": "${configDir}/src",
     "outDir": "${configDir}/dist"
   },

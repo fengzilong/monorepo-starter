@@ -21,7 +21,7 @@
     "dev": "tsup --watch",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
-    "lint": "tsc --noEmit && eslint src -f mo",
+    "lint": "tsgo --noEmit && eslint src -f mo",
     "prepublishOnly": "pnpm lint && pnpm test && pnpm build"
   },
   "dependencies": {},
@@ -33,7 +33,8 @@
     "eslint-formatter-mo": "catalog:",
     "vitest": "catalog:",
     "tsup": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "@typescript/native-preview": "catalog:"
   },
   "license": "{{license}}"
 }
