@@ -3,8 +3,7 @@ import { defineConfig } from 'eslint/config'
 import tseslint from 'typescript-eslint';
 import pluginImportX from 'eslint-plugin-import-x'
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
-import stylisticTs from '@stylistic/eslint-plugin-ts'
-// import stylisticJs from '@stylistic/eslint-plugin-js'
+import stylistic from '@stylistic/eslint-plugin'
 
 export default defineConfig([
   {
@@ -16,6 +15,12 @@ export default defineConfig([
   eslint.configs.recommended,
   tseslint.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
+  stylistic.configs.customize({
+    indent: 2,
+    quotes: 'single',
+    semi: false,
+    jsx: true,
+  }),
   {
     languageOptions: {
       parserOptions: {
@@ -26,48 +31,51 @@ export default defineConfig([
   },
   {
     plugins: {
-      // some rule only has js version
-      // waiting for https://github.com/eslint-stylistic/eslint-stylistic/issues/482
-      '@stylistic/ts': stylisticTs,
       'import-x': pluginImportX,
       'simple-import-sort': simpleImportSort,
     },
+  },
+  {
     rules: {
       // common
       'no-magic-numbers': 'off',
       'no-duplicate-imports': 'off',
+      '@typescript-eslint/no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],
       // import
       'import-x/no-duplicates': 'error',
       'simple-import-sort/imports': 'error',
       'simple-import-sort/exports': 'error',
+      '@typescript-eslint/consistent-type-imports': ['error'],
+      'import-x/consistent-type-specifier-style': ['error', 'prefer-top-level'],
       // stylistic
-      '@stylistic/ts/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
-      // '@stylistic/js/jsx-quotes': ['error', 'prefer-double'],
-      // '@stylistic/js/array-bracket-newline': ['error', 'consistent'],
-      // '@stylistic/js/array-bracket-spacing': ['error', 'always'],
-      // '@stylistic/js/arrow-parens': ['error', 'as-needed'],
-      // '@stylistic/js/arrow-spacing': 'error',
-      '@stylistic/ts/block-spacing': 'error',
-      '@stylistic/ts/comma-dangle': ['error', {
-        'arrays': 'always-multiline',
-        'objects': 'always-multiline',
-        'imports': 'always-multiline',
-        'exports': 'always-multiline',
-        'functions': 'never',
-        'importAttributes': 'never',
-        'dynamicImports': 'never',
-      }],
-      '@stylistic/ts/comma-spacing': ['error', { 'before': false, 'after': true }],
-      // '@stylistic/js/computed-property-spacing': ['error', 'always'],
-      // '@stylistic/js/dot-location': ['error', 'property'],
-      // '@stylistic/js/eol-last': ['error', 'always'],
-      // '@stylistic/js/generator-star-spacing': ['error', {'before': true, 'after': false}],
-      '@stylistic/ts/indent': ['error', 2, { 'SwitchCase': 1 }],
-      '@stylistic/ts/key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }],
-      '@stylistic/ts/keyword-spacing': ['error', { 'before': true, after: true }],
-      // '@stylistic/js/max-len': ['warn', { 'code': 80 }],
-      '@stylistic/ts/semi': ['error', 'never', { 'beforeStatementContinuationChars': 'always' }],
-      // '@stylistic/js/template-curly-spacing': ['error', 'always'],
+      '@stylistic/brace-style': ['error', '1tbs'],
+      // '@stylistic/quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+      // '@stylistic/block-spacing': 'error',
+      // '@stylistic/comma-dangle': ['error', {
+      //   'arrays': 'always-multiline',
+      //   'objects': 'always-multiline',
+      //   'imports': 'always-multiline',
+      //   'exports': 'always-multiline',
+      //   'functions': 'never',
+      //   'importAttributes': 'never',
+      //   'dynamicImports': 'never',
+      // }],
+      // '@stylistic/comma-spacing': ['error', { 'before': false, 'after': true }],
+      // '@stylistic/indent': ['error', 2, { 'SwitchCase': 1 }],
+      // '@stylistic/key-spacing': ['error', { 'beforeColon': false, 'afterColon': true }],
+      // '@stylistic/keyword-spacing': ['error', { 'before': true, after: true }],
+      // '@stylistic/semi': ['error', 'never', { 'beforeStatementContinuationChars': 'always' }],
+      // '@stylistic/computed-property-spacing': ['error', 'always'],
+      // '@stylistic/dot-location': ['error', 'property'],
+      // '@stylistic/eol-last': ['error', 'always'],
+      // '@stylistic/generator-star-spacing': ['error', {'before': true, 'after': false}],
+      // '@stylistic/jsx-quotes': ['error', 'prefer-double'],
+      // '@stylistic/array-bracket-newline': ['error', 'consistent'],
+      // '@stylistic/array-bracket-spacing': ['error', 'always'],
+      // '@stylistic/arrow-parens': ['error', 'as-needed'],
+      // '@stylistic/arrow-spacing': 'error',
+      // '@stylistic/max-len': ['warn', { 'code': 80 }],
+      // '@stylistic/template-curly-spacing': ['error', 'always'],
     },
   },
 ])
