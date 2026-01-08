@@ -16,7 +16,7 @@ jobs:
         node-version: [18.x, 22.x]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       # https://pnpm.io/next/continuous-integration#github-actions
       - name: Install pnpm
