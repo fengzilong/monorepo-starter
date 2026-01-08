@@ -86,7 +86,7 @@ importers:
     devDependencies:
       '@eslint/js':
         specifier: ^9.17.0
-        version: 9.17.0
+        version: 9.39.2
       '@types/node':
         specifier: 'catalog:'
         version: 24.10.4
@@ -134,7 +134,7 @@ importers:
     dependencies:
       '@eslint/js':
         specifier: ^9.9.0
-        version: 9.17.0
+        version: 9.39.2
       '@stylistic/eslint-plugin':
         specifier: ^5.6.1
         version: 5.6.1(eslint@9.39.2(jiti@1.21.7))
@@ -750,10 +750,6 @@ packages:
 
   '@eslint/eslintrc@3.3.3':
     resolution: {integrity: sha512-Kr+LPIUVKz2qkx1HAMH8q1q6azbqBAsXJUxBl/ODDuVPX45Z9DfwB8tPjTi6nNZ8BuM3nbJxC5zCAg5elnBUTQ==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@eslint/js@9.17.0':
-    resolution: {integrity: sha512-Sxc4hqcs1kTu0iID3kcZDW3JHq2a77HO9P8CP6YEA/FpH3Ll8UXE2r/86Rz9YJLKme39S9vU5OWNjC6Xl0Cr3w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/js@9.39.2':
@@ -3575,8 +3571,6 @@ snapshots:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
-
-  '@eslint/js@9.17.0': {}
 
   '@eslint/js@9.39.2': {}
 
