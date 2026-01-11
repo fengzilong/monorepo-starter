@@ -1,8 +1,16 @@
 {
-  "extends": "@infra/tsconfig/browser",
+  "$schema": "https://json.schemastore.org/tsconfig",
   "references": [
+    {
+      "path": "./tsconfig.build.json"
+    },
+    {
+      "path": "./tsconfig.test.json"
+    },
     {
       "path": "../foo"
     }
-  ]
+  ],
+  // override default include(**/*)
+  "include": []
 }

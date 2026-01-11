@@ -33,7 +33,8 @@
     "vitest": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:",
-    "@typescript/native-preview": "catalog:"
+    "@typescript/native-preview": "catalog:",
+    "@tsconfig/bases": "catalog:"
   },
   "license": "{{license}}"
 }

@@ -27,7 +27,6 @@
     "foo": "workspace:*"
   },
   "devDependencies": {
-    "@infra/tsconfig": "workspace:*",
     "@infra/eslint-config": "workspace:*",
     "@vitest/coverage-v8": "catalog:",
     "eslint": "catalog:",
@@ -35,7 +34,8 @@
     "vitest": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:",
-    "@typescript/native-preview": "catalog:"
+    "@typescript/native-preview": "catalog:",
+    "@tsconfig/bases": "catalog:"
   },
   "license": "MIT"
 }
