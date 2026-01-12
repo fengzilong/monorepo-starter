@@ -6,7 +6,6 @@ export default defineConfig({
     include: ['**/*.{test,spec}.?(c|m)[jt]s?(x)'],
     coverage: {
       provider: 'v8',
-      all: true,
       include: ['src'],
     },
     cache: false
