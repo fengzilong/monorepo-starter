@@ -6,7 +6,7 @@ const Target = {
   Node: 'node',
 }
 
-function createConfig(target) {
+function createConfig(target, configs = []) {
   return [
     ...base,
     {
@@ -18,7 +18,8 @@ function createConfig(target) {
           ...globals.es2022,
         }
       },
-    }
+    },
+    ...configs,
   ]
 }
 
